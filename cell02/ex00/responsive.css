@@ -1,0 +1,18 @@
+table {
+    width: 100%;
+    height: 320px;
+    table-layout: fixed;
+    border: solid 2px black;
+    border-spacing: 0px;
+  }
+tr td{
+    border: 1px solid gray;  
+}
+
+#table-right{
+    background-color: rgb(152, 152, 236);
+}
+
+#table-left{
+    background-color: red;
+}
