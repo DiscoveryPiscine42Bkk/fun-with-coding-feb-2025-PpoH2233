@@ -1,29 +1,27 @@
 body {
     margin: 0px;
-    font-size: x-large;
-    font-weight: bold;
+    padding: 0px;
+    font-size: 24px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.flex-center {
+.parallax-image{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.parallax-image {
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
 #parallax-image-1 {
-    background-image: url("https://images.unsplash.com/photo-1613310023042-ad79320c00ff");
+    background-image: url("https://i.swncdn.com/media/1280w/via/images/2023/10/16/33048/33048-istockgetty-images-plusnorima_source_file.jpg");
 
 }
 
 #parallax-image-2 {
-    background-image: url("https://images.unsplash.com/photo-1575489272413-cb506258027e");
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVebMUXHqv9ELbf9u-jcznyrChHNt0K6P9zQ&s");
 }
 
 .parallax-text {
@@ -31,4 +29,7 @@ body {
     height: 50vh;
     background-color: black;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
