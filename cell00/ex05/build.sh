@@ -1,9 +1,9 @@
-#!/bin/bash 
+#!/bin/bash
 
-if [ $# -eq 0 ]; then
-    echo "No arguments supplied"
-else
-    for arg in "$@"; do
-        mkdir "ex$arg"
-    done
-fi
+# for every args
+for number in "$@"
+do
+    # create folder name by appending number variable
+    folder_name="ex${number}"
+    mkdir "$folder_name"
+done
