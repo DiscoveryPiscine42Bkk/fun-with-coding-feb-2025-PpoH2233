@@ -1,6 +1,6 @@
 table {
     width: 100%;
-    height: 320px;
+    height: 100vh;
     table-layout: fixed;
     border: solid 2px black;
     border-spacing: 0px;
