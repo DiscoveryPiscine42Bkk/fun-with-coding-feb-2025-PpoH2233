@@ -1,10 +1,19 @@
-#!/bin/bash 
+#!/bin/bash
 
-if [ $# -eq 0 ]; then
+if [ "$1" = "" ]
+then
     echo "No arguments supplied"
-else
-    for arg in "$@"; do
-        echo "$arg"
-    done
+    exit
+fi
 
+echo "$1"
+
+if [ "$2" != "" ]
+then
+    echo "$2"
+fi
+
+if [ "$3" != "" ]
+then
+    echo "$3"
 fi
