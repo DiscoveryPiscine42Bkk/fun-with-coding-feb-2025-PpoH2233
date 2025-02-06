@@ -83,15 +83,20 @@
             alert(text);
         }
 
+        function isValidFloat(value) {
+          return value.toString().indexOf('.') !== -1;
+        }
+      
+
       setInterval(() => display("Please, use me..."), 30000);
 
       $("#calculateButton").on("mouseup", function () {
-        let n1 = parseInt($("#n1").val());
-        let n2 = parseInt($("#n2").val());
+        let n1 = parseFloat($("#n1").val());
+        let n2 = parseFloat($("#n2").val());
         let operation = $("#operationSelector").val();
         let result = "Error :(";
 
-        if (isNaN(n1) || isNaN(n2) || n1 < 0 || n2 < 0 ){
+        if (isNaN(n1) || isNaN(n2) || n1 < 0 || n2 < 0 || !isValidFloat(n1) || !isValidFloat(n2)) {
           display("Error :(");
           return;
         }
