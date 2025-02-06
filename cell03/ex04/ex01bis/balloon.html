@@ -26,49 +26,51 @@
             background-color: red;
             position: relative;
             cursor: pointer;
-            
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
     <div id="balloon"></div>
 
     <script>
-        const balloon = document.querySelector("#balloon");
-        let originalSize = 200;
-        let size = originalSize;
-        let maxSize = 420;
-        let colors = ["red", "green", "blue"];
-        let colorIndex = 0;
+        $(document).ready(function() {
+            let originalSize = 200;
+            let size = originalSize;
+            let maxSize = 420;
+            let colors = ["red", "green", "blue"];
+            let colorIndex = 0;
 
-        function growUp() {
-            size += 10;
-            colorIndex = (colorIndex + 1) % colors.length; 
+            function growUp() {
+                size += 10;
+                colorIndex = (colorIndex + 1) % colors.length;
 
-            if (size > maxSize) {
-                size = originalSize; 
-                colorIndex = 0; 
-            }
-
-            updateBalloon();
-        }
-
-        function shrinkDown() {
-            if (size > originalSize) {
-                size -= 5;
-                colorIndex = (colorIndex - 1 + colors.length) % colors.length; 
+                if (size > maxSize) {
+                    size = originalSize;
+                    colorIndex = 0;
+                }
                 updateBalloon();
             }
-        }
 
-        function updateBalloon() {
-            balloon.style.width = size + "px";
-            balloon.style.height = size + "px";
-            balloon.style.backgroundColor = colors[colorIndex];
-        }
+            function shrinkDown() {
+                if (size > originalSize) {
+                    size -= 5;
+                    colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+                    updateBalloon();
+                }
+            }
 
-        balloon.addEventListener("click", growUp);
-        balloon.addEventListener("mouseleave", shrinkDown);
+            function updateBalloon() {
+                $("#balloon").css({
+                    "width": size + "px",
+                    "height": size + "px",
+                    "background-color": colors[colorIndex]
+                });
+            }
+
+            $("#balloon").click(growUp);
+            $("#balloon").mouseleave(shrinkDown);
+        });
     </script>
   </body>
 </html>
