@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>backgroound</title>
+    <link rel="stylesheet" href="background.css">
+</head>
+<body>
+    <button> Change background color !!! </button>
+</body>
+</html>
+
+<script>
+    const button = document.querySelector('button');
+    const body = document.querySelector('body');
+    
+    function randomRGB(){
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        return 'rgb(' + r + ',' + g + ',' + b + ')';
+    }
+    function changeBackground(){
+        body.style.backgroundColor = randomRGB();
+    }
+
+    body.style.backgroundColor = randomRGB();
+
+    button.addEventListener('click', changeBackground);
+
+</script>

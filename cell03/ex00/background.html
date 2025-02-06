@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>backgroound</title>
+    <title>Background</title>
     <link rel="stylesheet" href="background.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <button> Change background color !!! </button>
+    <button id="changeColorBtn">Change background color !!!</button>
 </body>
 </html>
 
 <script>
-    const button = document.querySelector('button');
-    const body = document.querySelector('body');
-    
-    function randomRGB(){
-        const r = Math.floor(Math.random() * 256);
-        const g = Math.floor(Math.random() * 256);
-        const b = Math.floor(Math.random() * 256);
-        return 'rgb(' + r + ',' + g + ',' + b + ')';
-    }
-    function changeBackground(){
-        body.style.backgroundColor = randomRGB();
-    }
+    $(document).ready(function() {
+        function randomRGB() {
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            return `rgb(${r},${g},${b})`;
+        }
 
-    body.style.backgroundColor = randomRGB();
+        function changeBackground() {
+            $("body").css("background-color", randomRGB());
+        }
 
-    button.addEventListener('click', changeBackground);
-
+        changeBackground();
+        
+        $("#changeColorBtn").click(changeBackground);
+    });
 </script>
