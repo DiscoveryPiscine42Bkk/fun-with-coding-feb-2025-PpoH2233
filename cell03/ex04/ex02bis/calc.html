@@ -82,10 +82,6 @@
             console.log(text);
             alert(text);
         }
-
-        function isValidFloat(value) {
-          return value.toString().indexOf('.') !== -1;
-        }
       
 
       setInterval(() => display("Please, use me..."), 30000);
@@ -96,7 +92,7 @@
         let operation = $("#operationSelector").val();
         let result = "Error :(";
 
-        if (isNaN(n1) || isNaN(n2) || n1 < 0 || n2 < 0 || !isValidFloat(n1) || !isValidFloat(n2)) {
+        if (isNaN(n1) || isNaN(n2) || n1 < 0 || n2 < 0) {
           display("Error :(");
           return;
         }

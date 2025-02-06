@@ -22,7 +22,7 @@ function Base64Decode(str) {
 }
 
 function addTodo() {
-    let todo = prompt("Enter a new todo:");
+    let todo = encodeURIComponent(prompt("Enter a new todo:"));
     if (todo && todo.trim() !== "") {
         let listValue = $.cookie(COOKIE_NAME) ? Base64Decode($.cookie(COOKIE_NAME)).split(",") : [];
         listValue.push(todo);
@@ -50,7 +50,7 @@ function getTodoList() {
         listValue.forEach(todo => {
             let todoDiv = $("<div></div>")
                 .addClass("todoDiv")
-                .text(todo)
+                .text(decodeURIComponent(todo))
                 .on("click", function () {
                     removeTodo(todo);
                 });
