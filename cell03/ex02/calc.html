@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      body {
+        margin: 0px;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(239, 239, 239);
+        color: rgb(0, 0, 0);
+        display: flex;
+        justify-content: center;
+        font-family: sans-serif;
+      }
+
+      label {
+        display: block;
+      }
+
+      .flex {
+        display: flex;
+        align-items: center;
+        margin: 20px;
+      }
+
+      .flex-col {
+        flex-direction: column;
+      }
+
+      input,
+      select,
+      label,
+      button {
+        height: fit-content;
+        width: fit-content;
+        margin: 5px 10px;
+      }
+
+      button {
+        font-size: x-large;
+        padding: 8px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex flex-col">
+      <div class="flex">
+        <div>
+          <label for="n1">Number1: </label>
+          <input type="text" id="n1" />
+        </div>
+
+        <div>
+          <label for="n1">Operation: </label>
+          <select id="operationSelector">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="n1">Number2: </label>
+          <input type="text" id="n2" />
+        </div>
+      </div>
+
+      <div class="flex">
+        <button id="calculateButton">Try me!</button>
+      </div>
+    </div>
+
+    <script>
+      const operationSelector = document.getElementById("operationSelector");
+      const calculateButton = document.getElementById("calculateButton");
+      const NumberBox1 = document.getElementById("n1");
+      const NumberBox2 = document.getElementById("n2");
+
+      function display(text) {
+        console.log(text);
+        window.alert(text);
+      }
+
+      const intervalUseMe = setInterval(
+        () => display("Please, use me..."),
+        30 * 1000
+      );
+
+      calculateButton.addEventListener("mouseup", () => {
+        const operation = operationSelector.value;
+        const n1 = Number(NumberBox1.value);
+        const n2 = Number(NumberBox2.value);
+        let result = "Error :(";
+
+        console.log(n1, operation, n2);
+
+        if (String(n1) == "NaN" || n1 < 0 || String(n2) == "NaN" || n2 < 0) {
+          display('Error :(');
+          return;
+        }
+
+        switch (operation) {
+          case "+":
+            result = n1 + n2;
+            break;
+          case "-":
+            result = n1 - n2;
+            break;
+          case "*":
+            result = n1 * n2;
+            break;
+          case "/":
+            result = n1 / n2;
+            if (n2 === 0) {
+                result = "It’s over 9000!";
+              }
+            break;
+          case "%":
+            result = n1 % n2;
+            if (n2 === 0) {
+              result = "It’s over 9000!";
+            }
+            break;
+          default:
+            result = "Error :(";
+            break;
+        }
+
+        display(result);
+      });
+    </script>
+  </body>
+</html>
