@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
       body {
         margin: 0px;
@@ -55,7 +56,7 @@
         </div>
 
         <div>
-          <label for="n1">Operation: </label>
+          <label for="operationSelector">Operation: </label>
           <select id="operationSelector">
             <option value="+">+</option>
             <option value="-">-</option>
@@ -66,7 +67,7 @@
         </div>
 
         <div>
-          <label for="n1">Number2: </label>
+          <label for="n2">Number2: </label>
           <input type="text" id="n2" />
         </div>
       </div>
@@ -77,31 +78,21 @@
     </div>
 
     <script>
-      const operationSelector = document.getElementById("operationSelector");
-      const calculateButton = document.getElementById("calculateButton");
-      const NumberBox1 = document.getElementById("n1");
-      const NumberBox2 = document.getElementById("n2");
+        function display(text) {
+            console.log(text);
+            alert(text);
+        }
 
-      function display(text) {
-        console.log(text);
-        window.alert(text);
-      }
+      setInterval(() => display("Please, use me..."), 30000);
 
-      const intervalUseMe = setInterval(
-        () => display("Please, use me..."),
-        30 * 1000
-      );
-
-      calculateButton.addEventListener("mouseup", () => {
-        const operation = operationSelector.value;
-        const n1 = Number(NumberBox1.value);
-        const n2 = Number(NumberBox2.value);
+      $("#calculateButton").on("mouseup", function () {
+        let n1 = parseInt($("#n1").val());
+        let n2 = parseInt($("#n2").val());
+        let operation = $("#operationSelector").val();
         let result = "Error :(";
 
-        console.log(n1, operation, n2);
-
-        if (String(n1) == "NaN" || n1 < 0 || String(n2) == "NaN" || n2 < 0) {
-          display('Error :(');
+        if (isNaN(n1) || isNaN(n2) || n1 < 0 || n2 < 0 ){
+          display("Error :(");
           return;
         }
 
@@ -116,19 +107,10 @@
             result = n1 * n2;
             break;
           case "/":
-            result = n1 / n2;
-            if (n2 === 0) {
-                result = "It’s over 9000!";
-              }
+            result = n2 === 0 ? "It’s over 9000!" : n1 / n2;
             break;
           case "%":
-            result = n1 % n2;
-            if (n2 === 0) {
-              result = "It’s over 9000!";
-            }
-            break;
-          default:
-            result = "Error :(";
+            result = n2 === 0 ? "It’s over 9000!" : n1 % n2;
             break;
         }
 
