@@ -1,0 +1,112 @@
+:root {
+    font-family: 'Poppins', sans-serif;
+    --primary-bg: #f6f5f5;
+    --secondary-bg: #ffffff;
+    --highlight: #5e72e4;
+    --border-color: #ccc;
+}
+
+body {
+    background-color: var(--primary-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    margin-top: 20px;
+}
+
+/* CV Layout */
+.cv-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    background: var(--secondary-bg);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
+}
+
+
+.cv-sidebar {
+    width: 96%;
+    background: var(--highlight);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.cv-sidebar img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.cv-sidebar h2 {
+    margin: 10px 0;
+}
+
+.cv-sidebar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Content Section */
+.cv-content {
+    width: 80%;
+    padding: 20px;
+}
+
+.cv-content h1, .cv-content h2 {
+    color: var(--highlight);
+}
+
+.skills-container, .hobbies-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill, .hobby, .education_name {
+    background: var(--highlight);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+
+    align-items: center;
+    gap: 10px;
+}
+
+.skill img {
+    width: 20px;
+    height: 20px;
+}
+
+.cv-navbar{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+    padding: 10px 20px;
+    background: var(--primary-bg);
+    color: white;
+    margin-bottom: 5%;
+}
+
+.flex-gap{
+    display: flex;
+    gap: 10px;
+}
+
+.cv-navbar a {
+    color: var(--highlight);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cv-navbar a:hover {
+    text-decoration: underline;
+}

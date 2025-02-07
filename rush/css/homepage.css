@@ -1,0 +1,81 @@
+:root{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    --primary-bg: #f6f5f5;
+    --secondary-bg: #ffffff;
+    --highlight: #5e72e4;
+    --border-color: #ccc;
+}
+
+body{
+    background-color: #f1f1f1;
+    height: 100vh;
+    background-image: url("https://www.42bangkok.com/wp-content/uploads/2020/02/42feature.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    border-radius: 15px ;
+    padding: 8% 11%;
+    background-color: var(--highlight);
+    margin: 10% 20%;
+    box-shadow: 8px 2px 15px rgba(0, 0, 0, 0.9);
+    transition: 0.3s;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.container-link{
+    column-gap: 5%;
+
+}
+
+.container h1{
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--secondary-bg);
+}
+
+.flex-end{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container-link .link a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.25em;
+    padding: 6px 11px;
+    border-radius: 5px;
+    transition: 0.3s;
+    background-color: var(--secondary-bg);
+}
+
+.container-link .link a:hover{
+    background-color: var(--border-color);
+    color: var(--primary-bg);
+    border-radius: 10px;
+}
+
