@@ -1,9 +1,10 @@
-const Data_ppanprua = {
+const Data_psiriwan = {
     "name": "Pasut Siriwan",
     "age": 19,
-    "url_profile": "https://avatars.githubusercontent.com/u/77360534?v=4",
+    "url_profile": "https://scontent-bkk1-2.xx.fbcdn.net/v/t39.30808-6/313405963_2339249589567176_2825625593009656426_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=FOnvI0wtWmsQ7kNvgFGT9RY&_nc_zt=23&_nc_ht=scontent-bkk1-2.xx&_nc_gid=ARxXnYvpGNmC5MUPE2482Ba&oh=00_AYBqHi_3eReYx_tgKxvyqNRTsurM9INNnwnIFQLCH4aysQ&oe=67ABBCB2",
     "education": "KMITL - Computer Engineering",
     "education_name": ["KMITL"],
+    "achievement": ["KMITL First Year Student Representative", "KMITL Computer Engineering 2023" , "เหรียญทองโอลิมปิกคอมพิวเตอร์ ปี 1", "ชนะเลิศรายการกินจุ อิอิ"],
     "hobbies": [
         { "emoji": "🎮", "name": "Games" },
         { "emoji": "🎥", "name": "Movies" },
@@ -23,17 +24,29 @@ const Data_ppanprua = {
         { "URL": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg", "name": "TypeScript" },
         { "URL": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Kali-dragon-icon.svg/2048px-Kali-dragon-icon.svg.png", "name": "Kali Linux" },
         { "URL": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Wireshark_icon_new.png/768px-Wireshark_icon_new.png", "name": "Wireshark" },
-    ]
+    ],
+    "github": "underdust",
+    "facebook": "https://www.facebook.com/pasut.siriwan"
 };
 
 // Set Profile Information
-document.getElementById("profile").src = Data_ppanprua.url_profile;
-document.getElementById("name").textContent = Data_ppanprua.name;
-document.getElementById("name2").textContent = Data_ppanprua.name;
-document.getElementById("education").textContent = Data_ppanprua.education;
+document.getElementById("profile").src = Data_psiriwan.url_profile;
+document.getElementById("name").textContent = Data_psiriwan.name;
+document.getElementById("name2").textContent = Data_psiriwan.name;
+document.getElementById("education").textContent = Data_psiriwan.education;
+
+
+// Display Achievement
+const achievementContainer = document.getElementById("achievement");
+Data_psiriwan.achievement.forEach(achievement => {
+    const achievementElement = document.createElement("li");
+    achievementElement.innerHTML = achievement;
+    achievementContainer.appendChild(achievementElement);
+});
+
 // Display Skills
 const skillsContainer = document.getElementById("skills");
-Data_ppanprua.skills.forEach(skill => {
+Data_psiriwan.skills.forEach(skill => {
     const skillElement = document.createElement("div");
     skillElement.classList.add("skill");
     skillElement.innerHTML = `<img src="${skill.URL}" alt="${skill.name}"> ${skill.name}`;
@@ -42,12 +55,15 @@ Data_ppanprua.skills.forEach(skill => {
 
 // Display Hobbies
 const hobbiesContainer = document.getElementById("hobbies");
-Data_ppanprua.hobbies.forEach(hobby => {
+Data_psiriwan.hobbies.forEach(hobby => {
     const hobbyElement = document.createElement("div");
     hobbyElement.classList.add("hobby");
     hobbyElement.innerHTML = `${hobby.emoji} ${hobby.name}`;
     hobbiesContainer.appendChild(hobbyElement);
 });
 
+const githubElement = document.getElementById("github");
+githubElement.innerHTML = `<a href="https://github.com/${Data_psiriwan.github}" target="_blank">${Data_psiriwan.github}</a>`;
 
-
+const facebookElement = document.getElementById("facebook");
+facebookElement.innerHTML = `<a href="${Data_psiriwan.facebook}" target="_blank">Pasut Siriwan</a>`;

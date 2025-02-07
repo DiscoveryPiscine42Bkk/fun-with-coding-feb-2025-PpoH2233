@@ -15,6 +15,7 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
 }
 
 .column{
@@ -78,4 +79,3 @@ body{
     color: var(--primary-bg);
     border-radius: 10px;
 }
-
